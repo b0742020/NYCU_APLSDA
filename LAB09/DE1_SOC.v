@@ -146,7 +146,6 @@ module DE1_SOC(
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-wire clkk;
 wire [7:0] address;
 reg read,write;
 wire [7:0] readdata,writedata;  //
@@ -158,8 +157,6 @@ reg [1:0] state;
 //=======================================================
 //  Structural coding
 //=======================================================
-counter c1(.clk(CLOCK_50),.number(50000000),.o_clk(clkk));  // 把時間設為1秒
-
 assign address    = 8'b00000001;
 assign writedata  = SW[7:0];
 assign byteenable = 8'b11111111;
@@ -223,17 +220,17 @@ always@(*)begin
 	endcase
 end 
 
-segment_7_hex sss1(readdata[3:0],HEX0);
-segment_7_hex sss2(readdata[7:4],HEX1);
-segment_7_hex sss3(writedata[3:0],HEX2);
-segment_7_hex sss4(writedata[7:4],HEX3);
-segment_7_hex sss5({3'b000,readdataval},HEX4);
-segment_7_hex sss6({3'b000,waitrequest},HEX5);
+segment_7 u1(readdata[3:0],HEX0);
+segment_7 u2(readdata[7:4],HEX1);
+segment_7 u3(writedata[3:0],HEX2);
+segment_7 u4(writedata[7:4],HEX3);
+segment_7 u5({3'b000,readdataval},HEX4);
+segment_7 u6({3'b000,waitrequest},HEX5);
 
 
 endmodule
 //=======================================================
-module segment_7_hex(in,out);  //七段顯示器兼 4 to 7 decoder
+module segment_7(in,out);  //七段顯示器兼 4 to 7 decoder
 
 input [3:0]in;
 output [0:6]out;
