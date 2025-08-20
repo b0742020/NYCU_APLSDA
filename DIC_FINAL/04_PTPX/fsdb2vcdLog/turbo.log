@@ -1,0 +1,6 @@
+Command Line: /usr/cad/synopsys/verdi/2019.06/platform/LINUXAMD64/bin/fsdb2vcd /RAID2/COURSE/dic/dic299/DIC_Final_Project/03_GATE/Convolution_SYN.fsdb
+uname(Linux ee21 3.10.0-1160.88.1.el7.x86_64 #1 SMP Tue Mar 7 15:41:52 UTC 2023 x86_64)
+Load signals (0)-(174000) time 0.052160 0.104763 0.541737 delta 79220736 79220736 total 379944960 379944960
+Write signals (0)-(174000) time 0.347593 0.167588 0.002372 delta 1908736 1908736 total 381853696 381853696
+Unload (0)-(174000) time 0.003360 0.003146 0.000214 delta 0 0 total 381853696 381853696
+au time 0.841624 0.312216 0.569951 delta 113303552 113303552 total 217440256 217440256

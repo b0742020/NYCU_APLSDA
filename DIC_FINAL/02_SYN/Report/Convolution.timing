@@ -1,0 +1,104 @@
+Error: Unit conflict found: Constraint time unit is 'ns'; main library time unit is 'ps'. (IFS-001)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Convolution
+Version: T-2022.03
+Date   : Mon Jan  8 17:14:00 2024
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_INVBUF_RVT_TT_08302018
+Wire Load Model Mode: top
+
+  Startpoint: D_In_Weight_17_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Out_OFM[11]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  D_In_Weight_17_reg[2]/CLK (ASYNC_DFFHx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  D_In_Weight_17_reg[2]/QN (ASYNC_DFFHx1_ASAP7_75t_R)    57.22      57.22 f
+  mult_372_17/b[2] (Convolution_DW_mult_uns_17)           0.00      57.22 f
+  mult_372_17/U116/Y (NAND2xp33_ASAP7_75t_R)             30.29      87.50 r
+  mult_372_17/U114/Y (NOR2xp33_ASAP7_75t_R)              31.19     118.70 f
+  mult_372_17/U39/SN (FAx1_ASAP7_75t_R)                  61.64     180.34 f
+  mult_372_17/U95/Y (XNOR2xp5_ASAP7_75t_R)               28.23     208.57 r
+  mult_372_17/U92/Y (NAND2xp33_ASAP7_75t_R)              12.63     221.20 f
+  mult_372_17/U91/Y (NAND2xp33_ASAP7_75t_R)              25.12     246.31 r
+  mult_372_17/U87/Y (NAND2xp33_ASAP7_75t_R)              14.50     260.82 f
+  mult_372_17/U86/Y (NAND2xp33_ASAP7_75t_R)              25.11     285.93 r
+  mult_372_17/U82/Y (NAND2xp33_ASAP7_75t_R)              14.50     300.43 f
+  mult_372_17/U81/Y (NAND2xp33_ASAP7_75t_R)              25.11     325.54 r
+  mult_372_17/U78/Y (XOR2xp5_ASAP7_75t_R)                39.48     365.01 r
+  mult_372_17/product[6] (Convolution_DW_mult_uns_17)     0.00     365.01 r
+  add_29_root_add_0_root_add_372_31/U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         44.23     409.25 f
+  U1645/Y (INVx1_ASAP7_75t_R)                            17.38     426.62 r
+  add_10_root_add_0_root_add_372_31/U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         39.68     466.31 f
+  U1969/Y (INVx1_ASAP7_75t_R)                            16.68     482.99 r
+  add_4_root_add_0_root_add_372_31/U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         39.56     522.55 f
+  U2002/Y (INVx1_ASAP7_75t_R)                            16.66     539.21 r
+  add_1_root_add_0_root_add_372_31/A[6] (Convolution_DW01_add_1)
+                                                          0.00     539.21 r
+  add_1_root_add_0_root_add_372_31/U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         36.50     575.71 r
+  add_1_root_add_0_root_add_372_31/U15/Y (INVx1_ASAP7_75t_R)
+                                                         17.50     593.22 f
+  add_1_root_add_0_root_add_372_31/SUM[6] (Convolution_DW01_add_1)
+                                                          0.00     593.22 f
+  add_0_root_add_0_root_add_372_31/B[6] (Convolution_DW01_add_0)
+                                                          0.00     593.22 f
+  add_0_root_add_0_root_add_372_31/U1_6/CON (FAx1_ASAP7_75t_R)
+                                                         22.82     616.04 r
+  add_0_root_add_0_root_add_372_31/U7/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     631.31 f
+  add_0_root_add_0_root_add_372_31/U1_7/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     651.61 r
+  add_0_root_add_0_root_add_372_31/U6/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     666.88 f
+  add_0_root_add_0_root_add_372_31/U1_8/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     687.17 r
+  add_0_root_add_0_root_add_372_31/U5/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     702.44 f
+  add_0_root_add_0_root_add_372_31/U1_9/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     722.74 r
+  add_0_root_add_0_root_add_372_31/U4/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     738.01 f
+  add_0_root_add_0_root_add_372_31/U1_10/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     758.31 r
+  add_0_root_add_0_root_add_372_31/U3/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     773.58 f
+  add_0_root_add_0_root_add_372_31/U1_11/SN (FAx1_ASAP7_75t_R)
+                                                         37.50     811.07 f
+  add_0_root_add_0_root_add_372_31/U23/Y (INVx1_ASAP7_75t_R)
+                                                         10.34     821.42 r
+  add_0_root_add_0_root_add_372_31/SUM[11] (Convolution_DW01_add_0)
+                                                          0.00     821.42 r
+  U784/Y (AND2x2_ASAP7_75t_R)                            16.89     838.31 r
+  Out_OFM[11] (out)                                       0.00     838.31 r
+  data arrival time                                                838.31
+
+  clock clk (rise edge)                                2000.00    2000.00
+  clock network delay (ideal)                             0.00    2000.00
+  output external delay                               -1000.00    1000.00
+  data required time                                              1000.00
+  --------------------------------------------------------------------------
+  data required time                                              1000.00
+  data arrival time                                               -838.31
+  --------------------------------------------------------------------------
+  slack (MET)                                                      161.69
+
+
+1

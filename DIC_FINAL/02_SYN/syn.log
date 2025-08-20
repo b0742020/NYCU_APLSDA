@@ -1,0 +1,601 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version T-2022.03 for linux64 - Feb 22, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+#======================================================
+#
+# Synopsys Synthesis Scripts (Design Vision dctcl mode)
+#
+#======================================================
+#======================================================
+#  Set Libraries
+#======================================================
+set search_path { ./../02_SYN/ }
+ ./../02_SYN/ 
+set link_library {dw_foundation.sldb }
+dw_foundation.sldb 
+set synthetic_library {dw_foundation.sldb asap7sc7p5t_AO_RVT_TT_08302018.db asap7sc7p5t_OA_RVT_TT_08302018.db asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_AO_RVT_TT_08302018.db  asap7sc7p5t_OA_RVT_TT_08302018.db}
+dw_foundation.sldb asap7sc7p5t_AO_RVT_TT_08302018.db asap7sc7p5t_OA_RVT_TT_08302018.db asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_AO_RVT_TT_08302018.db  asap7sc7p5t_OA_RVT_TT_08302018.db
+set target_library {asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db }         
+asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db 
+#======================================================
+#  Global Parameters
+#======================================================
+set DESIGN "Convolution"
+Convolution
+set clk_period 2000
+2000
+# the unit of the clk period  in here is ps 
+set IN_DLY  [expr 0.5*$clk_period]
+1000.0
+set OUT_DLY [expr 0.5*$clk_period]
+1000.0
+#set hdlin_ff_always_sync_set_reset true
+#======================================================
+#  Read RTL Code
+#======================================================
+analyze -f sverilog $DESIGN\.v 
+Running PRESTO HDLC
+Compiling source file ./../02_SYN/Convolution.v
+Presto compilation completed successfully.
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN  
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine Convolution line 221 in file
+		'./../02_SYN/Convolution.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   D_In_IFM_32_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_1_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_2_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_3_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_4_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_5_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_6_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_7_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_8_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_9_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_10_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_11_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_12_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_13_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_14_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_15_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_16_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_17_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_18_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_19_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_20_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_21_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_22_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_23_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_24_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_25_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_26_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_27_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_28_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_29_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_30_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   D_In_IFM_31_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine Convolution line 292 in file
+		'./../02_SYN/Convolution.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| D_In_Weight_32_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_1_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_2_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_3_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_4_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_5_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_6_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_7_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_8_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  D_In_Weight_9_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_10_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_11_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_12_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_13_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_14_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_15_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_16_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_17_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_18_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_19_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_20_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_21_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_22_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_23_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_24_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_25_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_26_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_27_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_28_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_29_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_30_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| D_In_Weight_31_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine Convolution line 363 in file
+		'./../02_SYN/Convolution.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (Convolution)
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_AO_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_OA_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_INVBUF_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_SEQ_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db'
+Elaborated 1 design.
+Current design is now 'Convolution'.
+1
+#======================================================
+#  Global Setting
+#======================================================
+#======================================================
+#  Set Design Constraints
+#======================================================
+create_clock -name "clk" -period $clk_period clk
+1
+set_ideal_network -no_propagate clk
+1
+set_input_delay  $IN_DLY -clock clk [all_inputs]
+1
+set_output_delay $OUT_DLY  -clock clk [all_outputs]
+1
+set_input_delay 0 -clock clk clk
+1
+set_input_delay 0 -clock clk rst_n
+1
+set_load 0.05 [all_outputs]
+1
+#set_max_fanout 10 [all_inputs]
+#set_dont_use slow/JKFF*
+#======================================================
+#  Optimization
+#======================================================
+uniquify
+1
+check_design > Report/$DESIGN\.check
+set_fix_multiple_port_nets -all -buffer_constants
+1
+set_fix_hold [all_clocks]
+1
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.0 |     *     |
+| Licensed DW Building Blocks        | S-2021.06-DWBB_202106.0 |     *     |
+| asap7sc7p5t_AO_RVT_TT_08302018     | 1.0                     |           |
+| asap7sc7p5t_OA_RVT_TT_08302018     | 1.0                     |           |
+| asap7sc7p5t_INVBUF_RVT_TT_08302018 | 1.0                     |           |
+| asap7sc7p5t_SEQ_RVT_TT_08302018    | 1.0                     |           |
+| asap7sc7p5t_SIMPLE_RVT_TT_08302018 | 1.0                     |           |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 325                                    |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 257                                    |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch cells                              | 2                                      |
+| Number of Dont Touch nets                               | 1                                      |
+| Number of size only cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+
+  Loading target library 'asap7sc7p5t_INVBUF_RVT_TT_08302018'
+  Loading target library 'asap7sc7p5t_SIMPLE_RVT_TT_08302018'
+  Loading target library 'asap7sc7p5t_SEQ_RVT_TT_08302018'
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'Convolution'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width13' (rpl)
+  Processing 'DW01_add_width13'
+  Building model 'DW01_add_width12' (rpl)
+  Processing 'DW01_add_width12'
+  Building model 'DW01_add_width11' (rpl)
+  Processing 'DW01_add_width11'
+  Building model 'DW01_add_width10' (rpl)
+  Processing 'DW01_add_width10'
+  Building model 'DW01_add_width9' (rpl)
+  Processing 'DW01_add_width9'
+  Processing 'Convolution_DW01_add_0'
+  Processing 'Convolution_DW01_add_1'
+  Processing 'Convolution_DW01_add_2'
+  Processing 'Convolution_DW01_add_3'
+  Processing 'Convolution_DW01_add_4'
+  Processing 'Convolution_DW01_add_5'
+  Processing 'Convolution_DW01_add_6'
+  Processing 'Convolution_DW01_add_7'
+  Processing 'Convolution_DW01_add_8'
+  Processing 'Convolution_DW01_add_9'
+  Processing 'Convolution_DW01_add_10'
+  Processing 'Convolution_DW01_add_11'
+  Processing 'Convolution_DW01_add_12'
+  Processing 'Convolution_DW01_add_13'
+  Processing 'Convolution_DW01_add_14'
+  Processing 'Convolution_DW01_add_15'
+  Processing 'Convolution_DW01_add_16'
+  Processing 'Convolution_DW01_add_17'
+  Processing 'Convolution_DW01_add_18'
+  Processing 'Convolution_DW01_add_19'
+  Processing 'Convolution_DW01_add_20'
+  Processing 'Convolution_DW01_add_21'
+  Processing 'Convolution_DW01_add_22'
+  Processing 'Convolution_DW01_add_23'
+  Processing 'Convolution_DW01_add_24'
+  Processing 'Convolution_DW01_add_25'
+  Processing 'Convolution_DW01_add_26'
+  Processing 'Convolution_DW01_add_27'
+  Processing 'Convolution_DW01_add_28'
+  Processing 'Convolution_DW01_add_29'
+  Processing 'Convolution_DW01_add_30'
+  Mapping 'Convolution_DW_mult_uns_0'
+  Mapping 'Convolution_DW_mult_uns_1'
+  Mapping 'Convolution_DW_mult_uns_2'
+  Mapping 'Convolution_DW_mult_uns_3'
+  Mapping 'Convolution_DW_mult_uns_4'
+  Mapping 'Convolution_DW_mult_uns_5'
+  Mapping 'Convolution_DW_mult_uns_6'
+  Mapping 'Convolution_DW_mult_uns_7'
+  Mapping 'Convolution_DW_mult_uns_8'
+  Mapping 'Convolution_DW_mult_uns_9'
+  Mapping 'Convolution_DW_mult_uns_10'
+  Mapping 'Convolution_DW_mult_uns_11'
+  Mapping 'Convolution_DW_mult_uns_12'
+  Mapping 'Convolution_DW_mult_uns_13'
+  Mapping 'Convolution_DW_mult_uns_14'
+  Mapping 'Convolution_DW_mult_uns_15'
+  Mapping 'Convolution_DW_mult_uns_16'
+  Mapping 'Convolution_DW_mult_uns_17'
+  Mapping 'Convolution_DW_mult_uns_18'
+  Mapping 'Convolution_DW_mult_uns_19'
+  Mapping 'Convolution_DW_mult_uns_20'
+  Mapping 'Convolution_DW_mult_uns_21'
+  Mapping 'Convolution_DW_mult_uns_22'
+  Mapping 'Convolution_DW_mult_uns_23'
+  Mapping 'Convolution_DW_mult_uns_24'
+  Mapping 'Convolution_DW_mult_uns_25'
+  Mapping 'Convolution_DW_mult_uns_26'
+  Mapping 'Convolution_DW_mult_uns_27'
+  Mapping 'Convolution_DW_mult_uns_28'
+  Mapping 'Convolution_DW_mult_uns_29'
+  Mapping 'Convolution_DW_mult_uns_30'
+  Mapping 'Convolution_DW_mult_uns_31'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+LNC WARNING: Found output_to_output lib arc on HAxp5_ASAP7_75t_R.
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:03    6894.1      0.00       0.0       0.0                                0.00  
+    0:00:03    6894.1      0.00       0.0       0.0                                0.00  
+    0:00:03    6894.1      0.00       0.0       0.0                                0.00  
+    0:00:03    6894.1      0.00       0.0       0.0                                0.00  
+    0:00:03    6894.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6411.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6203.8      0.00       0.0     625.4                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:04    6203.8      0.00       0.0     625.4                                0.00  
+    0:00:04    6205.0      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:04    6205.0      0.00       0.0       0.0                                0.00  
+    0:00:04    6205.0      0.00       0.0       0.0                                0.00  
+    0:00:04    6188.7      0.00       0.0       0.0                                0.00  
+    0:00:04    6176.3      0.00       0.0       0.0                                0.00  
+    0:00:04    6171.9      0.00       0.0       0.0                                0.00  
+    0:00:04    6170.5      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6169.1      0.00       0.0       0.0                                0.00  
+    0:00:04    6167.0      0.00       0.0       0.0                                0.00  
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_INVBUF_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_SEQ_RVT_TT_08302018.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+#======================================================
+#  Output Reports
+#======================================================
+report_timing            >  Report/$DESIGN\.timing
+report_area              >  Report/$DESIGN\.area
+report_resource          >  Report/$DESIGN\.resource
+#======================================================
+#  Change Naming Rule
+#======================================================
+set bus_inference_style "%s\[%d\]"
+%s[%d]
+set bus_naming_style "%s\[%d\]"
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _" -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _[]" -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+change_names -hierarchy -rules name_rule
+1
+#======================================================
+#  Output Results
+#======================================================
+set verilogout_higher_designs_first true
+true
+write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
+Writing verilog file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/Netlist/Convolution_SYN.v'.
+1
+write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
+Information: Writing timing information to file '/RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/Netlist/Convolution_SYN.sdf'. (WT-3)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+#======================================================
+#  Finish and Quit
+#======================================================
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Convolution
+Version: T-2022.03
+Date   : Mon Jan  8 17:14:02 2024
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_INVBUF_RVT_TT_08302018
+Wire Load Model Mode: top
+
+  Startpoint: D_In_Weight_17_reg_2_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Out_OFM[11]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  D_In_Weight_17_reg_2_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  D_In_Weight_17_reg_2_/QN (ASYNC_DFFHx1_ASAP7_75t_R)    57.22      57.22 f
+  mult_372_17/b[2] (Convolution_DW_mult_uns_17)           0.00      57.22 f
+  mult_372_17/U116/Y (NAND2xp33_ASAP7_75t_R)             30.29      87.50 r
+  mult_372_17/U114/Y (NOR2xp33_ASAP7_75t_R)              31.19     118.70 f
+  mult_372_17/U39/SN (FAx1_ASAP7_75t_R)                  61.64     180.34 f
+  mult_372_17/U95/Y (XNOR2xp5_ASAP7_75t_R)               28.23     208.57 r
+  mult_372_17/U92/Y (NAND2xp33_ASAP7_75t_R)              12.63     221.20 f
+  mult_372_17/U91/Y (NAND2xp33_ASAP7_75t_R)              25.12     246.31 r
+  mult_372_17/U87/Y (NAND2xp33_ASAP7_75t_R)              14.50     260.82 f
+  mult_372_17/U86/Y (NAND2xp33_ASAP7_75t_R)              25.11     285.93 r
+  mult_372_17/U82/Y (NAND2xp33_ASAP7_75t_R)              14.50     300.43 f
+  mult_372_17/U81/Y (NAND2xp33_ASAP7_75t_R)              25.11     325.54 r
+  mult_372_17/U78/Y (XOR2xp5_ASAP7_75t_R)                39.48     365.01 r
+  mult_372_17/product[6] (Convolution_DW_mult_uns_17)     0.00     365.01 r
+  add_29_root_add_0_root_add_372_31_U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         44.23     409.25 f
+  U1645/Y (INVx1_ASAP7_75t_R)                            17.38     426.62 r
+  add_10_root_add_0_root_add_372_31_U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         39.68     466.31 f
+  U1969/Y (INVx1_ASAP7_75t_R)                            16.68     482.99 r
+  add_4_root_add_0_root_add_372_31_U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         39.56     522.55 f
+  U2002/Y (INVx1_ASAP7_75t_R)                            16.66     539.21 r
+  add_1_root_add_0_root_add_372_31/A[6] (Convolution_DW01_add_1)
+                                                          0.00     539.21 r
+  add_1_root_add_0_root_add_372_31/U1_6/SN (FAx1_ASAP7_75t_R)
+                                                         36.50     575.71 r
+  add_1_root_add_0_root_add_372_31/U15/Y (INVx1_ASAP7_75t_R)
+                                                         17.50     593.22 f
+  add_1_root_add_0_root_add_372_31/SUM[6] (Convolution_DW01_add_1)
+                                                          0.00     593.22 f
+  add_0_root_add_0_root_add_372_31/B[6] (Convolution_DW01_add_0)
+                                                          0.00     593.22 f
+  add_0_root_add_0_root_add_372_31/U1_6/CON (FAx1_ASAP7_75t_R)
+                                                         22.82     616.04 r
+  add_0_root_add_0_root_add_372_31/U7/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     631.31 f
+  add_0_root_add_0_root_add_372_31/U1_7/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     651.61 r
+  add_0_root_add_0_root_add_372_31/U6/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     666.88 f
+  add_0_root_add_0_root_add_372_31/U1_8/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     687.17 r
+  add_0_root_add_0_root_add_372_31/U5/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     702.44 f
+  add_0_root_add_0_root_add_372_31/U1_9/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     722.74 r
+  add_0_root_add_0_root_add_372_31/U4/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     738.01 f
+  add_0_root_add_0_root_add_372_31/U1_10/CON (FAx1_ASAP7_75t_R)
+                                                         20.30     758.31 r
+  add_0_root_add_0_root_add_372_31/U3/Y (INVx1_ASAP7_75t_R)
+                                                         15.27     773.58 f
+  add_0_root_add_0_root_add_372_31/U1_11/SN (FAx1_ASAP7_75t_R)
+                                                         37.50     811.07 f
+  add_0_root_add_0_root_add_372_31/U23/Y (INVx1_ASAP7_75t_R)
+                                                         10.34     821.42 r
+  add_0_root_add_0_root_add_372_31/SUM[11] (Convolution_DW01_add_0)
+                                                          0.00     821.42 r
+  U784/Y (AND2x2_ASAP7_75t_R)                            16.89     838.31 r
+  Out_OFM[11] (out)                                       0.00     838.31 r
+  data arrival time                                                838.31
+
+  clock clk (rise edge)                                2000.00    2000.00
+  clock network delay (ideal)                             0.00    2000.00
+  output external delay                               -1000.00    1000.00
+  data required time                                              1000.00
+  --------------------------------------------------------------------------
+  data required time                                              1000.00
+  data arrival time                                               -838.31
+  --------------------------------------------------------------------------
+  slack (MET)                                                      161.69
+
+
+1
+report_area
+ 
+****************************************
+Report : area
+Design : Convolution
+Version: T-2022.03
+Date   : Mon Jan  8 17:14:02 2024
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_INVBUF_RVT_TT_08302018 (File: /RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_INVBUF_RVT_TT_08302018.db)
+    asap7sc7p5t_SIMPLE_RVT_TT_08302018 (File: /RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db)
+    asap7sc7p5t_SEQ_RVT_TT_08302018 (File: /RAID2/COURSE/dic/dic299/DIC_Final_Project/02_SYN/asap7sc7p5t_SEQ_RVT_TT_08302018.db)
+
+Number of ports:                          909
+Number of nets:                          4883
+Number of cells:                         3702
+Number of combinational cells:           3410
+Number of sequential cells:               257
+Number of macros/black boxes:               0
+Number of buf/inv:                        659
+Number of references:                      44
+
+Combinational area:               4608.213112
+Buf/Inv area:                      462.360966
+Noncombinational area:            1558.776950
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  6166.990062
+Total area:                 undefined
+1
+exit
+
+Memory usage for this session 178 Mbytes.
+Memory usage for this session including child processes 178 Mbytes.
+CPU usage for this session 7 seconds ( 0.00 hours ).
+Elapsed time for this session 17 seconds ( 0.00 hours ).
+
+Thank you...

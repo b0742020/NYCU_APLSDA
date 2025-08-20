@@ -1,0 +1,481 @@
+irun(64): 15.20-s084: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s084: Started on Jan 08, 2024 at 17:14:37 CST
+irun
+	../03_GATE/TESTBED.v
+	-define GATE
+	-debug
+	-v asap7sc7p5t_SIMPLE_RVT_TT_08302018.v
+	asap7sc7p5t_SEQ_RVT_TT_08302018.v
+	asap7sc7p5t_INVBUF_RVT_TT_08302018.v
+	-nontcglitch
+	-loadpli1 debpli:novas_pli_boot
+file: ../03_GATE/TESTBED.v
+	module worklib.Convolution:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW01_add_0:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW01_add_1:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW01_add_2:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_0:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_1:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_2:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_3:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_4:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_5:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_6:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_7:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_8:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_9:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_10:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_11:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_12:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_13:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_14:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_15:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_16:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_17:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_18:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_19:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_20:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_21:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_22:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_23:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_24:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_25:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_26:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_27:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_28:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_29:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_30:v
+		errors: 0, warnings: 0
+	module worklib.Convolution_DW_mult_uns_31:v
+		errors: 0, warnings: 0
+			$fscanf(input_In , "%d" , Pattern_ifm[row_in][col_in]);
+			      |
+ncvlog: *W,NOSYST (../00_TESTBED/PATTERN.v,582|9): System function '$fscanf' invoked as a task. Return value will be ignored.
+(`include file: ../00_TESTBED/PATTERN.v line 582, file: ../03_GATE/TESTBED.v line 8)
+		$fscanf(input_Weight , "%d" , Pattern_weight[col_weight]);
+		      |
+ncvlog: *W,NOSYST (../00_TESTBED/PATTERN.v,594|8): System function '$fscanf' invoked as a task. Return value will be ignored.
+(`include file: ../00_TESTBED/PATTERN.v line 594, file: ../03_GATE/TESTBED.v line 8)
+		$fscanf(input_Out , "%d" , Pattern_ofm[col_out]);
+		      |
+ncvlog: *W,NOSYST (../00_TESTBED/PATTERN.v,605|8): System function '$fscanf' invoked as a task. Return value will be ignored.
+(`include file: ../00_TESTBED/PATTERN.v line 605, file: ../03_GATE/TESTBED.v line 8)
+	module worklib.PATTERN:v
+		errors: 0, warnings: 3
+	module worklib.TESTBED:v
+		errors: 0, warnings: 0
+file: asap7sc7p5t_SEQ_RVT_TT_08302018.v
+	module worklib.ASYNC_DFFHx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFHQNx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFHQNx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFHQNx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFHQx4_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFLQNx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFLQNx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFLQNx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DFFLQx4_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DHLx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DHLx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DHLx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DLLx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DLLx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.DLLx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.ICGx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.ICGx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.ICGx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFHx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFHx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFHx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFHx4_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFLx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFLx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFLx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.SDFLx4_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_latch:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_err:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_r_err:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_r:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_s_err:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_s:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_sr_err:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_sr_0:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_dff_sr_1:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_latch_r:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_latch_s:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_latch_sr_0:v
+		errors: 0, warnings: 0
+	primitive worklib.altos_latch_sr_1:v
+		errors: 0, warnings: 0
+file: asap7sc7p5t_INVBUF_RVT_TT_08302018.v
+	module worklib.BUFx10_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx12_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx12f_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx16f_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx24_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx4_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx4f_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx5_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx6f_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.BUFx8_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.HB1xp67_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.HB2xp67_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.HB3xp67_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.HB4xp67_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx11_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx13_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx3_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx4_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx5_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx6_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVx8_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVxp33_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module worklib.INVxp67_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+file: asap7sc7p5t_SIMPLE_RVT_TT_08302018.v
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.AND2x2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.FAx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.NAND2xp33_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.NOR2xp33_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.OR2x2_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.TIELOx1_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.XNOR2xp5_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+	module asap7sc7p5t_SIMPLE_RVT_TT_08302018.XOR2xp5_ASAP7_75t_R:v
+		errors: 0, warnings: 0
+		Caching library 'asap7sc7p5t_SIMPLE_RVT_TT_08302018' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+  Convolution_DW01_add_2 add_2_root_add_0_root_add_372_31 ( .A({n1147, n1147, 
+                                                        |
+ncelab: *W,CUVWSP (../02_SYN/Netlist/Convolution_SYN.v,705|56): 1 output port was not connected:
+ncelab: (../02_SYN/Netlist/Convolution_SYN.v,2928): CO
+
+  Convolution_DW01_add_1 add_1_root_add_0_root_add_372_31 ( .A({n1147, n1147, 
+                                                        |
+ncelab: *W,CUVWSP (../02_SYN/Netlist/Convolution_SYN.v,710|56): 1 output port was not connected:
+ncelab: (../02_SYN/Netlist/Convolution_SYN.v,2882): CO
+
+  Convolution_DW01_add_0 add_0_root_add_0_root_add_372_31 ( .A({n1147, N524, 
+                                                        |
+ncelab: *W,CUVWSP (../02_SYN/Netlist/Convolution_SYN.v,733|56): 1 output port was not connected:
+ncelab: (../02_SYN/Netlist/Convolution_SYN.v,2832): CO
+
+	Top level design units:
+		TESTBED
+		DFFHQNx1_ASAP7_75t_R
+		DFFHQNx2_ASAP7_75t_R
+		DFFHQNx3_ASAP7_75t_R
+		DFFHQx4_ASAP7_75t_R
+		DFFLQNx1_ASAP7_75t_R
+		DFFLQNx2_ASAP7_75t_R
+		DFFLQNx3_ASAP7_75t_R
+		DFFLQx4_ASAP7_75t_R
+		DHLx1_ASAP7_75t_R
+		DHLx2_ASAP7_75t_R
+		DHLx3_ASAP7_75t_R
+		DLLx1_ASAP7_75t_R
+		DLLx2_ASAP7_75t_R
+		DLLx3_ASAP7_75t_R
+		ICGx1_ASAP7_75t_R
+		ICGx2_ASAP7_75t_R
+		ICGx3_ASAP7_75t_R
+		SDFHx1_ASAP7_75t_R
+		SDFHx2_ASAP7_75t_R
+		SDFHx3_ASAP7_75t_R
+		SDFHx4_ASAP7_75t_R
+		SDFLx1_ASAP7_75t_R
+		SDFLx2_ASAP7_75t_R
+		SDFLx3_ASAP7_75t_R
+		SDFLx4_ASAP7_75t_R
+		BUFx10_ASAP7_75t_R
+		BUFx12_ASAP7_75t_R
+		BUFx12f_ASAP7_75t_R
+		BUFx16f_ASAP7_75t_R
+		BUFx24_ASAP7_75t_R
+		BUFx2_ASAP7_75t_R
+		BUFx3_ASAP7_75t_R
+		BUFx4_ASAP7_75t_R
+		BUFx4f_ASAP7_75t_R
+		BUFx5_ASAP7_75t_R
+		BUFx6f_ASAP7_75t_R
+		BUFx8_ASAP7_75t_R
+		HB1xp67_ASAP7_75t_R
+		HB2xp67_ASAP7_75t_R
+		HB3xp67_ASAP7_75t_R
+		HB4xp67_ASAP7_75t_R
+		INVx11_ASAP7_75t_R
+		INVx13_ASAP7_75t_R
+		INVx2_ASAP7_75t_R
+		INVx3_ASAP7_75t_R
+		INVx4_ASAP7_75t_R
+		INVx5_ASAP7_75t_R
+		INVx8_ASAP7_75t_R
+		INVxp33_ASAP7_75t_R
+		INVxp67_ASAP7_75t_R
+ncelab: *W,CUSFNF: The SDF file "Convolution_SYN.sdf" not found..
+		$sdf_annotate("Convolution_SYN.sdf",u_Convolution);   	
+		            |
+ncelab: *W,CUSSTI (./TESTBED.v,97|14): This SDF System Task will be Ignored..
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		asap7sc7p5t_SIMPLE_RVT_TT_08302018.FAx1_ASAP7_75t_R:v <0x4fef42d2>
+			streams:   0, words:     0
+		asap7sc7p5t_SIMPLE_RVT_TT_08302018.XNOR2xp5_ASAP7_75t_R:v <0x79e94d8c>
+			streams:   0, words:     0
+		asap7sc7p5t_SIMPLE_RVT_TT_08302018.XOR2xp5_ASAP7_75t_R:v <0x3f802abe>
+			streams:   0, words:     0
+		worklib.ASYNC_DFFHx1_ASAP7_75t_R:v <0x2a567673>
+			streams:   0, words:     0
+		worklib.ASYNC_DFFHx1_ASAP7_75t_R:v <0x6bedec8e>
+			streams:   0, words:     0
+		worklib.Convolution:v <0x14930cd9>
+			streams:   0, words:     0
+		worklib.DFFHQNx1_ASAP7_75t_R:v <0x05124835>
+			streams:   0, words:     0
+		worklib.DFFHQNx2_ASAP7_75t_R:v <0x300ef0ac>
+			streams:   0, words:     0
+		worklib.DFFHQNx3_ASAP7_75t_R:v <0x24332a76>
+			streams:   0, words:     0
+		worklib.DFFHQx4_ASAP7_75t_R:v <0x70360698>
+			streams:   0, words:     0
+		worklib.DFFLQNx1_ASAP7_75t_R:v <0x4e39bf19>
+			streams:   0, words:     0
+		worklib.DFFLQNx2_ASAP7_75t_R:v <0x32200c3d>
+			streams:   0, words:     0
+		worklib.DFFLQNx3_ASAP7_75t_R:v <0x2f079f1e>
+			streams:   0, words:     0
+		worklib.DFFLQx4_ASAP7_75t_R:v <0x073b9ed3>
+			streams:   0, words:     0
+		worklib.DHLx1_ASAP7_75t_R:v <0x3b1a4a68>
+			streams:   0, words:     0
+		worklib.DHLx2_ASAP7_75t_R:v <0x315b2737>
+			streams:   0, words:     0
+		worklib.DHLx3_ASAP7_75t_R:v <0x30524eaf>
+			streams:   0, words:     0
+		worklib.DLLx1_ASAP7_75t_R:v <0x7ff87bef>
+			streams:   0, words:     0
+		worklib.DLLx2_ASAP7_75t_R:v <0x5074236d>
+			streams:   0, words:     0
+		worklib.DLLx3_ASAP7_75t_R:v <0x6c8286a2>
+			streams:   0, words:     0
+		worklib.ICGx1_ASAP7_75t_R:v <0x0c3a1c0b>
+			streams:   0, words:     0
+		worklib.ICGx2_ASAP7_75t_R:v <0x0a96e8b7>
+			streams:   0, words:     0
+		worklib.ICGx3_ASAP7_75t_R:v <0x29b6643f>
+			streams:   0, words:     0
+		worklib.PATTERN:v <0x7e7c5ff5>
+			streams:  16, words: 140161
+		worklib.SDFHx1_ASAP7_75t_R:v <0x433d43e4>
+			streams:   0, words:     0
+		worklib.SDFHx2_ASAP7_75t_R:v <0x5fde854d>
+			streams:   0, words:     0
+		worklib.SDFHx3_ASAP7_75t_R:v <0x0df2aa9b>
+			streams:   0, words:     0
+		worklib.SDFHx4_ASAP7_75t_R:v <0x5ea56f7a>
+			streams:   0, words:     0
+		worklib.SDFLx1_ASAP7_75t_R:v <0x60e4c285>
+			streams:   0, words:     0
+		worklib.SDFLx2_ASAP7_75t_R:v <0x0efc72e6>
+			streams:   0, words:     0
+		worklib.SDFLx3_ASAP7_75t_R:v <0x3ba98d49>
+			streams:   0, words:     0
+		worklib.SDFLx4_ASAP7_75t_R:v <0x00e6c396>
+			streams:   0, words:     0
+		worklib.TESTBED:v <0x456035e5>
+			streams:   1, words:   712
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                  3755      99
+		UDPs:                      555      14
+		Primitives:              16070       4
+		Timing outputs:           4055      24
+		Registers:                 376     134
+		Scalar wires:             4452       -
+		Expanded wires:            256      64
+		Always blocks:               4       4
+		Initial blocks:              6       6
+		Timing checks:            9729       -
+		Delayed tcheck signals:   1097     329
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.TESTBED:v
+Loading snapshot worklib.TESTBED:v .................... Done
+*Verdi* Loading libsscore_ius152.so
+ncsim> source /usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/inca/files/ncsimrc
+ncsim> run
+FSDB Dumper for IUS, Release Verdi_P-2019.06, Linux x86_64/64bit, 05/26/2019
+(C) 1996 - 2019 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'Convolution_SYN.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+[37m                                                                                                                                          
+[37m                                                                                [32m      :BBQvi.                                              
+[37m                                                              .i7ssrvs7         [32m     BBBBBBBBQi                                           
+[37m                        .:r7rrrr:::.        .::::::...   .i7vr:.      .B:       [32m    :BBBP :7BBBB.                                         
+[37m                      .Kv.........:rrvYr7v7rr:.....:rrirJr.   .rgBBBBg  Bi      [32m    BBBB     BBBB                                         
+[37m                     7Q  :rubEPUri:.       ..:irrii:..    :bBBBBBBBBBBB  B      [32m   iBBBv     BBBB       vBr                               
+[37m                    7B  BBBBBBBBBBBBBBB::BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB :R     [32m   BBBBBKrirBBBB.     :BBBBBB:                            
+[37m                   Jd .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: Bi    [32m  rBBBBBBBBBBBR.    .BBBM:BBB                             
+[37m                  uZ .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .B    [32m  BBBB   .::.      EBBBi :BBU                             
+[37m                 7B .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  B    [32m MBBBr           vBBBu   BBB.                             
+[37m                .B  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: JJ   [32m i7PB          iBBBBB.  iBBB                              
+[37m                B. BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  Lu             [32m  vBBBBPBBBBPBBB7       .7QBB5i                
+[37m               Y1 KBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBi XBBBBBBBi :B            [32m :RBBB.  .rBBBBB.      rBBBBBBBB7              
+[37m              :B .BBBBBBBBBBBBBsRBBBBBBBBBBBrQBBBBB. UBBBRrBBBBBBr 1BBBBBBBBB  B.          [32m    .       BBBB       BBBB  :BBBB             
+[37m              Bi BBBBBBBBBBBBBi :BBBBBBBBBBE .BBK.  .  .   QBBBBBBBBBBBBBBBBBB  Bi         [32m           rBBBr       BBBB    BBBU            
+[37m             .B .BBBBBBBBBBBBBBQBBBBBBBBBBBB       [38;2;242;172;172mBBv [37m.LBBBBBBBBBBBBBBBBBBBBBB. B7.:ii:   [32m           vBBB        .BBBB   :7i.            
+[37m            .B  PBBBBBBBBBBBBBBBBBBBBBBBBBBBBbYQB. [38;2;242;172;172mBB: [37mBBBBBBBBBBBBBBBBBBBBBBBBB  Jr:::rK7 [32m             .7  BBB7   iBBBg                  
+[37m           7M  PBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  [38;2;242;172;172mBB. [37mBBBBBBBBBBBBBBBBBBBBBBB..i   .   v1                  [32mdBBB.   5BBBr                 
+[37m          sZ .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  [38;2;242;172;172mBB. [37mBBBBBBBBBBBBBBBBBBBBBBBBBBB iD2BBQL.                 [32m ZBBBr  EBBBv     YBBBBQi     
+[37m  .7YYUSIX5 .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  [38;2;242;172;172mBB. [37mBBBBBBBBBBBBBBBBBBBBBBBBY.:.      :B                 [32m  iBBBBBBBBD     BBBBBBBBB.   
+[37m LB.        ..BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB. [38;2;242;172;172mBB: [37mBBBBBBBBBBBBBBBBBBBBBBBBMBBB. BP17si                 [32m    :LBBBr      vBBBi  5BBB   
+[37m  KvJPBBB :BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: [38;2;242;172;172mZB: [37mBBBBBBBBBBBBBBBBBBBBBBBBBsiJr .i7ssr:                [32m          ...   :BBB:   BBBu  
+[37m i7ii:.   ::BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBj [38;2;242;172;172muBi [37mQBBBBBBBBBBBBBBBBBBBBBBBBi.ir      iB                [32m         .BBBi   BBBB   iMBu  
+[37mDB    .  vBdBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBg [38;2;242;172;172m7Bi [37mBBBBBBBBBBBBBBBBBBBBBBBBBBBBB rBrXPv.                [32m          BBBX   :BBBr        
+[37m :vQBBB. BQBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBQ [38;2;242;172;172miB: [37mBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .L:ii::irrrrrrrr7jIr   [32m          .BBBv  :BBBQ        
+[37m :7:.   .. 5BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  [38;2;242;172;172mBr [37mBBBBBBBBBBBBBBBBBBBBBBBBBBBB:            ..... ..YB. [32m           .BBBBBBBBB:        
+[37mBU  .:. BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  [38;2;242;172;172mB7 [37mgBBBBBBBBBBBBBBBBBBBBBBBBBB. gBBBBBBBBBBBBBBBBBB. BL [32m             rBBBBB1.         
+[37m rY7iB: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: [38;2;242;172;172mB7 [37mBBBBBBBBBBBBBBBBBBBBBBBBBB. QBBBBBBBBBBBBBBBBBi  v5                                
+[37m     us EBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB [38;2;242;172;172mIr [37mBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBgu7i.:BBBBBBBr Bu                                 
+[37m      B  7BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.[38;2;242;172;172m:i [37mBBBBBBBBBBBBBBBBBBBBBBBBBBBv:.  .. :::  .rr    rB                                  
+[37m      us  .BBBBBBBBBBBBBQLXBBBBBBBBBBBBBBBBBBBBBBBBq  .BBBBBBBBBBBBBBBBBBBBBBBBBv  :iJ7vri:::1Jr..isJYr                                   
+[37m      B  BBBBBBB  MBBBM      qBBBBBBBBBBBBBBBBBBBBBB: BBBBBBBBBBBBBBBBBBBBBBBBBB  B:           iir:                                       
+[37m     iB iBBBBBBBL       BBBP. :BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  B.                                                       
+[37m     P: BBBBBBBBBBB5v7gBBBBBB  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: Br                                                        
+[37m     B  BBBs 7BBBBBBBBBBBBBB7 :BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .B                                                         
+[37m    .B :BBBB.  EBBBBBQBBBBBJ .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB. B.                                                         
+[37m    ij qBBBBBg          ..  .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .B                                                          
+[37m    UY QBBBBBBBBSUSPDQL...iBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBK EL                                                          
+[37m    B7 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: B:                                                          
+[37m    B  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBYrBB vBBBBBBBBBBBBBBBBBBBBBBBB. Ls                                                          
+[37m    B  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBi_  /UBBBBBBBBBBBBBBBBBBBBBBBBB. :B:                                                        
+[37m   rM .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  ..IBBBBBBBBBBBBBBBBQBBBBBBBBBB  B                                                        
+[37m   B  BBBBBBBBBdZBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBPBBBBBBBBBBBBEji:..     sBBBBBBBr Br                                                       
+[37m  7B 7BBBBBBBr     .:vXQBBBBBBBBBBBBBBBBBBBBBBBBBQqui::..  ...i:i7777vi  BBBBBBr Bi                                                       
+[37m  Ki BBBBBBB  rY7vr:i....  .............:.....  ...:rii7vrr7r:..      7B  BBBBB  Bi                                                       
+[37m  B. BBBBBB  B:    .::ir77rrYLvvriiiiiiirvvY7rr77ri:..                 bU  iQBB:..rI                                                      
+[37m.S: 7BBBBP  B.                                                          vI7.  .:.  B.                                                     
+[37mB: ir:.   :B.                                                             :rvsUjUgU.                                                      
+[37mrMvrrirJKur                                                                                                                               [m
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                  Congratulations!                						                          
+                                           You have passed all patterns!          						                          
+                                           Total latency: 50.500000 cycles                						             
+-----------------------------------------------------------------------------------------------------------------------------------
+Simulation complete via $finish(1) at time 174 NS + 0
+../00_TESTBED/PATTERN.v:667 $finish;	
+ncsim> exit
+TOOL:	irun(64)	15.20-s084: Exiting on Jan 08, 2024 at 17:14:41 CST  (total: 00:00:04)
