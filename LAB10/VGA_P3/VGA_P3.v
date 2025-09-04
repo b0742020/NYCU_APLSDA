@@ -35,7 +35,7 @@ module VGA_P3(
 	output		reg     [7:0]		VGA_G,
 	output		    	      		VGA_HS,
 	output		reg     [7:0]		VGA_R,
-	output		        	  			VGA_SYNC_N,
+	output		        	  		VGA_SYNC_N,
 	output		          			VGA_VS
 );
 

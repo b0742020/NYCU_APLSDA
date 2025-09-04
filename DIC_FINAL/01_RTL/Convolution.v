@@ -1,410 +1,339 @@
-module Convolution	(
-	rst_n,
-	clk,
-	in_valid,
-	weight_valid,
-	In_IFM_1,
-	In_IFM_2,
-	In_IFM_3,
-	In_IFM_4,
-	In_IFM_5,
-	In_IFM_6,
-	In_IFM_7,
-	In_IFM_8,	
-	In_IFM_9,
-	In_IFM_10,
-	In_IFM_11,
-	In_IFM_12,
-	In_IFM_13,
-	In_IFM_14,
-	In_IFM_15,
-	In_IFM_16,
-	In_IFM_17,
-	In_IFM_18,	
-	In_IFM_19,
-	In_IFM_20,
-	In_IFM_21,
-	In_IFM_22,
-	In_IFM_23,
-	In_IFM_24,
-	In_IFM_25,
-	In_IFM_26,
-	In_IFM_27,
-	In_IFM_28,	
-	In_IFM_29,
-	In_IFM_30,
-	In_IFM_31,
-	In_IFM_32,
-	In_Weight_1,
-	In_Weight_2,
-	In_Weight_3,
-	In_Weight_4,
-	In_Weight_5,
-	In_Weight_6,
-	In_Weight_7,
-	In_Weight_8,
-	In_Weight_9,
-	In_Weight_10,
-	In_Weight_11,
-	In_Weight_12,
-	In_Weight_13,
-	In_Weight_14,
-	In_Weight_15,
-	In_Weight_16,
-	In_Weight_17,
-	In_Weight_18,	
-	In_Weight_19,
-	In_Weight_20,
-	In_Weight_21,
-	In_Weight_22,
-	In_Weight_23,
-	In_Weight_24,
-	In_Weight_25,
-	In_Weight_26,
-	In_Weight_27,
-	In_Weight_28,	
-	In_Weight_29,
-	In_Weight_30,
-	In_Weight_31,
-	In_Weight_32,
-	out_valid,
-	Out_OFM
+module CIM_Macro (clk,rst_n,in_valid,weight_valid
+,I1,I2,I3,I4
+,I5,I6,I7,I8
+,I9,I10,I11,I12
+,I13,I14,I15,I16
+,I17,I18,I19,I20
+,I21,I22,I23,I24
+,I25,I26,I27,I28
+,I29,I30,I31,I32
+,W1  ,W2  ,W3  ,W4  
+,W5  ,W6  ,W7  ,W8  
+,W9  ,W10 ,W11 ,W12  
+,W13 ,W14 ,W15 ,W16 
+,W17 ,W18 ,W19 ,W20 
+,W21 ,W22 ,W23 ,W24 
+,W25 ,W26 ,W27 ,W28 
+,W29 ,W30 ,W31 ,W32
+,out_valid
+,out_result
 );
 
-input clk;
-input rst_n;
+
+//=====================================================================//
+//                             I/O port
+//=====================================================================//
+input clk , rst_n;
 input in_valid;
 input weight_valid;
-input [3:0] In_IFM_1 ;
-input [3:0] In_IFM_2 ;
-input [3:0] In_IFM_3 ;
-input [3:0] In_IFM_4 ;
-input [3:0] In_IFM_5 ;
-input [3:0] In_IFM_6 ;
-input [3:0] In_IFM_7 ;
-input [3:0] In_IFM_8 ;	
-input [3:0] In_IFM_9 ;
-input [3:0]In_IFM_10 ;
-input [3:0]In_IFM_11 ;
-input [3:0]In_IFM_12 ;
-input [3:0]In_IFM_13 ;
-input [3:0]In_IFM_14 ;
-input [3:0]In_IFM_15 ;
-input [3:0]In_IFM_16 ;
-input [3:0]In_IFM_17 ;
-input [3:0]In_IFM_18 ;
-input [3:0]In_IFM_19 ;
-input [3:0]In_IFM_20 ;
-input [3:0]In_IFM_21 ;
-input [3:0]In_IFM_22 ;
-input [3:0]In_IFM_23 ;
-input [3:0]In_IFM_24 ;
-input [3:0]In_IFM_25 ;
-input [3:0]In_IFM_26 ;
-input [3:0]In_IFM_27 ;
-input [3:0]In_IFM_28 ;
-input [3:0]In_IFM_29 ;
-input [3:0]In_IFM_30 ;
-input [3:0]In_IFM_31 ;
-input [3:0]In_IFM_32 ;
-input [3:0]In_Weight_1;
-input [3:0]In_Weight_2;
-input [3:0]In_Weight_3;	
-input [3:0]In_Weight_4;
-input [3:0]In_Weight_5;
-input [3:0]In_Weight_6;
-input [3:0]In_Weight_7;	
-input [3:0]In_Weight_8;
-input [3:0]In_Weight_9;
-input [3:0]In_Weight_10;
-input [3:0]In_Weight_11;
-input [3:0]In_Weight_12;
-input [3:0]In_Weight_13;	
-input [3:0]In_Weight_14;
-input [3:0]In_Weight_15;
-input [3:0]In_Weight_16;
-input [3:0]In_Weight_17;	
-input [3:0]In_Weight_18;
-input [3:0]In_Weight_19;
-input [3:0]In_Weight_20;
-input [3:0]In_Weight_21;
-input [3:0]In_Weight_22;
-input [3:0]In_Weight_23;	
-input [3:0]In_Weight_24;
-input [3:0]In_Weight_25;
-input [3:0]In_Weight_26;
-input [3:0]In_Weight_27;	
-input [3:0]In_Weight_28;
-input [3:0]In_Weight_29;
-input [3:0]In_Weight_30;
-input [3:0]In_Weight_31;
-input [3:0]In_Weight_32;
-
+input [3:0]I1,I2,I3,I4
+,I5,I6,I7,I8
+,I9,I10,I11,I12
+,I13,I14,I15,I16
+,I17,I18,I19,I20
+,I21,I22,I23,I24
+,I25,I26,I27,I28
+,I29,I30,I31,I32
+,W1  ,W2  ,W3  ,W4  
+,W5  ,W6  ,W7  ,W8  
+,W9  ,W10 ,W11 ,W12  
+,W13 ,W14 ,W15 ,W16 
+,W17 ,W18 ,W19 ,W20 
+,W21 ,W22 ,W23 ,W24 
+,W25 ,W26 ,W27 ,W28 
+,W29 ,W30 ,W31 ,W32;
 output reg out_valid;
-output [12:0] Out_OFM;
+output reg[12:0]out_result;
+//=====================================================================//
+//                                                                     //
+//=====================================================================//
 
-wire    [12:0]out;
-/*====================================*/
-/*            Design                 */
-/*===================================*/
-reg    [3:0]D_In_IFM_1 ;
-reg    [3:0]D_In_IFM_2 ;
-reg    [3:0]D_In_IFM_3 ;
-reg    [3:0]D_In_IFM_4 ;
-reg    [3:0]D_In_IFM_5 ;
-reg    [3:0]D_In_IFM_6 ;
-reg    [3:0]D_In_IFM_7 ;
-reg    [3:0]D_In_IFM_8 ;	
-reg    [3:0]D_In_IFM_9 ;
-reg    [3:0]D_In_IFM_10 ;
-reg    [3:0]D_In_IFM_11 ;
-reg    [3:0]D_In_IFM_12 ;
-reg    [3:0]D_In_IFM_13 ;
-reg    [3:0]D_In_IFM_14 ;
-reg    [3:0]D_In_IFM_15 ;
-reg    [3:0]D_In_IFM_16 ;
-reg    [3:0]D_In_IFM_17 ;
-reg    [3:0]D_In_IFM_18 ;
-reg    [3:0]D_In_IFM_19 ;
-reg    [3:0]D_In_IFM_20 ;
-reg    [3:0]D_In_IFM_21 ;
-reg    [3:0]D_In_IFM_22 ;
-reg    [3:0]D_In_IFM_23 ;
-reg    [3:0]D_In_IFM_24 ;
-reg    [3:0]D_In_IFM_25 ;
-reg    [3:0]D_In_IFM_26 ;
-reg    [3:0]D_In_IFM_27 ;
-reg    [3:0]D_In_IFM_28 ;
-reg    [3:0]D_In_IFM_29 ;
-reg    [3:0]D_In_IFM_30 ;
-reg    [3:0]D_In_IFM_31 ;
-reg    [3:0]D_In_IFM_32 ;
+//=====================================================================//
+//                                 Register 
+//=====================================================================//
+reg done; 
+reg[12:0]input_value[1:32];
+reg[12:0]input_weight[1:32];
+reg [12:0] mult_result [1:32];
+reg [12:0] sum_result_1 [1:16];
+reg [12:0] sum_result_2 [1:8];
+reg [12:0] sum_result_3 [1:4];
+reg [12:0] sum_result_4 [1:2];
+reg [12:0] sum_result_5;
+//=====================================================================//
+//                                                                     //
+//=====================================================================//
 
-reg    [3:0]D_In_Weight_1;
-reg    [3:0]D_In_Weight_2;
-reg    [3:0]D_In_Weight_3;	
-reg    [3:0]D_In_Weight_4;
-reg    [3:0]D_In_Weight_5;
-reg    [3:0]D_In_Weight_6;
-reg    [3:0]D_In_Weight_7;	
-reg    [3:0]D_In_Weight_8;
-reg    [3:0]D_In_Weight_9;
-reg    [3:0]D_In_Weight_10;
-reg    [3:0]D_In_Weight_11;
-reg    [3:0]D_In_Weight_12;
-reg    [3:0]D_In_Weight_13;	
-reg    [3:0]D_In_Weight_14;
-reg    [3:0]D_In_Weight_15;
-reg    [3:0]D_In_Weight_16;
-reg    [3:0]D_In_Weight_17;	
-reg    [3:0]D_In_Weight_18;
-reg    [3:0]D_In_Weight_19;
-reg    [3:0]D_In_Weight_20;
-reg    [3:0]D_In_Weight_21;
-reg    [3:0]D_In_Weight_22;
-reg    [3:0]D_In_Weight_23;	
-reg    [3:0]D_In_Weight_24;
-reg    [3:0]D_In_Weight_25;
-reg    [3:0]D_In_Weight_26;
-reg    [3:0]D_In_Weight_27;	
-reg    [3:0]D_In_Weight_28;
-reg    [3:0]D_In_Weight_29;
-reg    [3:0]D_In_Weight_30;
-reg    [3:0]D_In_Weight_31;
-reg    [3:0]D_In_Weight_32;
-
-
-
-
-
-
-always@(posedge clk or negedge rst_n)begin
-    if(!rst_n)begin
-        D_In_IFM_1  <= 0;
-        D_In_IFM_2  <= 0;
-        D_In_IFM_3  <= 0;
-        D_In_IFM_4  <= 0;
-        D_In_IFM_5  <= 0;
-        D_In_IFM_6  <= 0;
-        D_In_IFM_7  <= 0;
-        D_In_IFM_8  <= 0;
-        D_In_IFM_9  <= 0;
-        D_In_IFM_10 <= 0;
-        D_In_IFM_11 <= 0;
-        D_In_IFM_12 <= 0;
-        D_In_IFM_13 <= 0;
-        D_In_IFM_14 <= 0;
-        D_In_IFM_15 <= 0;
-        D_In_IFM_16 <= 0;
-        D_In_IFM_17 <= 0;
-        D_In_IFM_18 <= 0;
-        D_In_IFM_19 <= 0;
-        D_In_IFM_20 <= 0;
-        D_In_IFM_21 <= 0;
-        D_In_IFM_22 <= 0;
-        D_In_IFM_23 <= 0;
-        D_In_IFM_24 <= 0;
-        D_In_IFM_25 <= 0;
-        D_In_IFM_26 <= 0;
-        D_In_IFM_27 <= 0;
-        D_In_IFM_28 <= 0;
-        D_In_IFM_29 <= 0;
-        D_In_IFM_30 <= 0;
-        D_In_IFM_31 <= 0;
-        D_In_IFM_32 <= 0;
-    end
-    else if(in_valid)begin
-        D_In_IFM_1  <= In_IFM_1 ;
-        D_In_IFM_2  <= In_IFM_2 ;
-        D_In_IFM_3  <= In_IFM_3 ;
-        D_In_IFM_4  <= In_IFM_4 ;
-        D_In_IFM_5  <= In_IFM_5 ;
-        D_In_IFM_6  <= In_IFM_6 ;
-        D_In_IFM_7  <= In_IFM_7 ;
-        D_In_IFM_8  <= In_IFM_8 ;
-        D_In_IFM_9  <= In_IFM_9 ;
-        D_In_IFM_10 <= In_IFM_10;
-        D_In_IFM_11 <= In_IFM_11;
-        D_In_IFM_12 <= In_IFM_12;
-        D_In_IFM_13 <= In_IFM_13;
-        D_In_IFM_14 <= In_IFM_14;
-        D_In_IFM_15 <= In_IFM_15;
-        D_In_IFM_16 <= In_IFM_16;
-        D_In_IFM_17 <= In_IFM_17;
-        D_In_IFM_18 <= In_IFM_18;
-        D_In_IFM_19 <= In_IFM_19;
-        D_In_IFM_20 <= In_IFM_20;
-        D_In_IFM_21 <= In_IFM_21;
-        D_In_IFM_22 <= In_IFM_22;
-        D_In_IFM_23 <= In_IFM_23;
-        D_In_IFM_24 <= In_IFM_24;
-        D_In_IFM_25 <= In_IFM_25;
-        D_In_IFM_26 <= In_IFM_26;
-        D_In_IFM_27 <= In_IFM_27;
-        D_In_IFM_28 <= In_IFM_28;
-        D_In_IFM_29 <= In_IFM_29;
-        D_In_IFM_30 <= In_IFM_30;
-        D_In_IFM_31 <= In_IFM_31;
-        D_In_IFM_32 <= In_IFM_32;
-    end
+always @(posedge clk or negedge rst_n)begin
+	if(!rst_n)begin
+		input_weight[1] <='d0;
+		input_weight[2] <='d0;
+		input_weight[3] <='d0;
+		input_weight[4] <='d0;
+		input_weight[5] <='d0;
+		input_weight[6] <='d0;
+		input_weight[7] <='d0;
+		input_weight[8] <='d0;
+		input_weight[9] <='d0;
+		input_weight[10] <='d0;
+		input_weight[11] <='d0;
+		input_weight[12] <='d0;
+		input_weight[13] <='d0;
+		input_weight[14] <='d0;
+		input_weight[15] <='d0;
+		input_weight[16] <='d0;
+		input_weight[17] <='d0;
+		input_weight[18] <='d0;
+		input_weight[19] <='d0;
+		input_weight[20] <='d0;
+		input_weight[21] <='d0;
+		input_weight[22] <='d0;
+		input_weight[23] <='d0;
+		input_weight[24] <='d0;
+		input_weight[25] <='d0;
+		input_weight[26] <='d0;
+		input_weight[27] <='d0;
+		input_weight[28] <='d0;
+		input_weight[29] <='d0;
+		input_weight[30] <='d0;
+		input_weight[31] <='d0;
+		input_weight[32] <='d0;
+	end
+	else begin 
+		if(weight_valid)begin
+		input_weight[1] <=W1;
+		input_weight[2] <=W2;
+		input_weight[3] <=W3;
+		input_weight[4] <=W4;
+		input_weight[5] <=W5;
+		input_weight[6] <=W6;
+		input_weight[7] <=W7;
+		input_weight[8] <=W8;
+		input_weight[9] <=W9;
+		input_weight[10] <=W10;
+		input_weight[11] <=W11;
+		input_weight[12] <=W12;
+		input_weight[13] <=W13;
+		input_weight[14] <=W14;
+		input_weight[15] <=W15;
+		input_weight[16] <=W16;
+		input_weight[17] <=W17;
+		input_weight[18] <=W18;
+		input_weight[19] <=W19;
+		input_weight[20] <=W20;
+		input_weight[21] <=W21;
+		input_weight[22] <=W22;
+		input_weight[23] <=W23;
+		input_weight[24] <=W24;
+		input_weight[25] <=W25;
+		input_weight[26] <=W26;
+		input_weight[27] <=W27;
+		input_weight[28] <=W28;
+		input_weight[29] <=W29;
+		input_weight[30] <=W30;
+		input_weight[31] <=W31;
+		input_weight[32] <=W32;
+		end
+	end
 end
 
-always@(posedge clk or negedge rst_n) begin
-    if(!rst_n)begin
-        D_In_Weight_1  <= 0 ; 
-        D_In_Weight_2  <= 0 ; 
-        D_In_Weight_3  <= 0 ; 
-        D_In_Weight_4  <= 0 ; 
-        D_In_Weight_5  <= 0 ; 
-        D_In_Weight_6  <= 0 ; 
-        D_In_Weight_7  <= 0 ; 
-        D_In_Weight_8  <= 0 ; 
-        D_In_Weight_9  <= 0 ; 
-        D_In_Weight_10 <= 0 ;
-        D_In_Weight_11 <= 0 ;
-        D_In_Weight_12 <= 0 ;
-        D_In_Weight_13 <= 0 ;
-        D_In_Weight_14 <= 0 ;
-        D_In_Weight_15 <= 0 ;
-        D_In_Weight_16 <= 0 ;
-        D_In_Weight_17 <= 0 ;
-        D_In_Weight_18 <= 0 ;
-        D_In_Weight_19 <= 0 ;
-        D_In_Weight_20 <= 0 ;
-        D_In_Weight_21 <= 0 ;
-        D_In_Weight_22 <= 0 ;
-        D_In_Weight_23 <= 0 ;
-        D_In_Weight_24 <= 0 ;
-        D_In_Weight_25 <= 0 ;
-        D_In_Weight_26 <= 0 ;
-        D_In_Weight_27 <= 0 ;
-        D_In_Weight_28 <= 0 ;
-        D_In_Weight_29 <= 0 ;
-        D_In_Weight_30 <= 0 ;
-        D_In_Weight_31 <= 0 ;
-        D_In_Weight_32 <= 0 ;
-    end
-    else if(weight_valid)begin
-        D_In_Weight_1  <= In_Weight_1  ;
-        D_In_Weight_2  <= In_Weight_2  ;
-        D_In_Weight_3  <= In_Weight_3  ;
-        D_In_Weight_4  <= In_Weight_4  ;
-        D_In_Weight_5  <= In_Weight_5  ;
-        D_In_Weight_6  <= In_Weight_6  ;
-        D_In_Weight_7  <= In_Weight_7  ;
-        D_In_Weight_8  <= In_Weight_8  ;
-        D_In_Weight_9  <= In_Weight_9  ;
-        D_In_Weight_10 <= In_Weight_10 ;
-        D_In_Weight_11 <= In_Weight_11 ;
-        D_In_Weight_12 <= In_Weight_12 ;
-        D_In_Weight_13 <= In_Weight_13 ;
-        D_In_Weight_14 <= In_Weight_14 ;
-        D_In_Weight_15 <= In_Weight_15 ;
-        D_In_Weight_16 <= In_Weight_16 ;
-        D_In_Weight_17 <= In_Weight_17 ;
-        D_In_Weight_18 <= In_Weight_18 ;
-        D_In_Weight_19 <= In_Weight_19 ;
-        D_In_Weight_20 <= In_Weight_20 ;
-        D_In_Weight_21 <= In_Weight_21 ;
-        D_In_Weight_22 <= In_Weight_22 ;
-        D_In_Weight_23 <= In_Weight_23 ;
-        D_In_Weight_24 <= In_Weight_24 ;
-        D_In_Weight_25 <= In_Weight_25 ;
-        D_In_Weight_26 <= In_Weight_26 ;
-        D_In_Weight_27 <= In_Weight_27 ;
-        D_In_Weight_28 <= In_Weight_28 ;
-        D_In_Weight_29 <= In_Weight_29 ;
-        D_In_Weight_30 <= In_Weight_30 ;
-        D_In_Weight_31 <= In_Weight_31 ;
-        D_In_Weight_32 <= In_Weight_32 ;
-    end
+always @(posedge clk or negedge rst_n)begin	
+	if(!rst_n) begin
+		input_value[1] <='d0;
+		input_value[2] <='d0;
+		input_value[3] <='d0;
+		input_value[4] <='d0;
+		input_value[5] <='d0;
+		input_value[6] <='d0;
+		input_value[7] <='d0;
+		input_value[8] <='d0;
+		input_value[9] <='d0;
+		input_value[10] <='d0;
+		input_value[11] <='d0;
+		input_value[12] <='d0;
+		input_value[13] <='d0;
+		input_value[14] <='d0;
+		input_value[15] <='d0;
+		input_value[16] <='d0;
+		input_value[17] <='d0;
+		input_value[18] <='d0;
+		input_value[19] <='d0;
+		input_value[20] <='d0;
+		input_value[21] <='d0;
+		input_value[22] <='d0;
+		input_value[23] <='d0;
+		input_value[24] <='d0;
+		input_value[25] <='d0;
+		input_value[26] <='d0;
+		input_value[27] <='d0;
+		input_value[28] <='d0;
+		input_value[29] <='d0;
+		input_value[30] <='d0;
+		input_value[31] <='d0;
+		input_value[32] <='d0;
+	end
+	else begin 
+		if(in_valid)begin
+			input_value[1] <=I1;
+			input_value[2] <=I2;
+			input_value[3] <=I3;
+			input_value[4] <=I4;
+			input_value[5] <=I5;
+			input_value[6] <=I6;
+			input_value[7] <=I7;
+			input_value[8] <=I8;
+			input_value[9] <=I9;
+			input_value[10] <=I10;
+			input_value[11] <=I11;
+			input_value[12] <=I12;
+			input_value[13] <=I13;
+			input_value[14] <=I14;
+			input_value[15] <=I15;
+			input_value[16] <=I16;
+			input_value[17] <=I17;
+			input_value[18] <=I18;
+			input_value[19] <=I19;
+			input_value[20] <=I20;
+			input_value[21] <=I21;
+			input_value[22] <=I22;
+			input_value[23] <=I23;
+			input_value[24] <=I24;
+			input_value[25] <=I25;
+			input_value[26] <=I26;
+			input_value[27] <=I27;
+			input_value[28] <=I28;
+			input_value[29] <=I29;
+			input_value[30] <=I30;
+			input_value[31] <=I31;
+			input_value[32] <=I32;
+		end
+	end
 end
 
-always@(posedge clk or negedge rst_n)begin
-    if(!rst_n)begin
-        out_valid <= 0;
-    end
-    else begin
-        out_valid <= in_valid;
-    end
+always @(*)begin
+	mult_result[1] = input_value[1]*input_weight[1];
+	mult_result[2] = input_value[2]*input_weight[2];
+	mult_result[3] = input_value[3]*input_weight[3];
+	mult_result[4] = input_value[4]*input_weight[4];
+	mult_result[5] = input_value[5]*input_weight[5];
+	mult_result[6] = input_value[6]*input_weight[6];
+	mult_result[7] = input_value[7]*input_weight[7];
+	mult_result[8] = input_value[8]*input_weight[8];
+	mult_result[9] = input_value[9]*input_weight[9];
+	mult_result[10] = input_value[10]*input_weight[10];
+	mult_result[11] = input_value[11]*input_weight[11];
+	mult_result[12] = input_value[12]*input_weight[12];
+	mult_result[13] = input_value[13]*input_weight[13];
+	mult_result[14] = input_value[14]*input_weight[14];
+	mult_result[15] = input_value[15]*input_weight[15];
+	mult_result[16] = input_value[16]*input_weight[16];
+	mult_result[17] = input_value[17]*input_weight[17];
+	mult_result[18] = input_value[18]*input_weight[18];
+	mult_result[19] = input_value[19]*input_weight[19];
+	mult_result[20] = input_value[20]*input_weight[20];
+	mult_result[21] = input_value[21]*input_weight[21];
+	mult_result[22] = input_value[22]*input_weight[22];
+	mult_result[23] = input_value[23]*input_weight[23];
+	mult_result[24] = input_value[24]*input_weight[24];
+	mult_result[25] = input_value[25]*input_weight[25];
+	mult_result[26] = input_value[26]*input_weight[26];
+	mult_result[27] = input_value[27]*input_weight[27];
+	mult_result[28] = input_value[28]*input_weight[28];
+	mult_result[29] = input_value[29]*input_weight[29];
+	mult_result[30] = input_value[30]*input_weight[30];
+	mult_result[31] = input_value[31]*input_weight[31];
+	mult_result[32] = input_value[32]*input_weight[32];
 end
 
-assign out= 
-    (D_In_IFM_1   * D_In_Weight_1 )+
-    (D_In_IFM_2   * D_In_Weight_2 )+
-    (D_In_IFM_3   * D_In_Weight_3 )+
-    (D_In_IFM_4   * D_In_Weight_4 )+
-    (D_In_IFM_5   * D_In_Weight_5 )+
-    (D_In_IFM_6   * D_In_Weight_6 )+
-    (D_In_IFM_7   * D_In_Weight_7 )+
-    (D_In_IFM_8   * D_In_Weight_8 )+
-    (D_In_IFM_9   * D_In_Weight_9 )+
-    (D_In_IFM_10  * D_In_Weight_10) +
-    (D_In_IFM_11  * D_In_Weight_11) +
-    (D_In_IFM_12  * D_In_Weight_12) +
-    (D_In_IFM_13  * D_In_Weight_13) +
-    (D_In_IFM_14  * D_In_Weight_14) +
-    (D_In_IFM_15  * D_In_Weight_15) +
-    (D_In_IFM_16  * D_In_Weight_16) +
-    (D_In_IFM_17  * D_In_Weight_17) +
-    (D_In_IFM_18  * D_In_Weight_18) +
-    (D_In_IFM_19  * D_In_Weight_19) +
-    (D_In_IFM_20  * D_In_Weight_20) +
-    (D_In_IFM_21  * D_In_Weight_21) +
-    (D_In_IFM_22  * D_In_Weight_22) +
-    (D_In_IFM_23  * D_In_Weight_23) +
-    (D_In_IFM_24  * D_In_Weight_24) +
-    (D_In_IFM_25  * D_In_Weight_25) +
-    (D_In_IFM_26  * D_In_Weight_26) +
-    (D_In_IFM_27  * D_In_Weight_27) +
-    (D_In_IFM_28  * D_In_Weight_28) +
-    (D_In_IFM_29  * D_In_Weight_29) +
-    (D_In_IFM_30  * D_In_Weight_30) +
-    (D_In_IFM_31  * D_In_Weight_31) +
-    (D_In_IFM_32  * D_In_Weight_32) ;
+always @(*)begin
+	sum_result_1[1] = mult_result[1] + mult_result[2];
+	sum_result_1[2] = mult_result[3] + mult_result[4];
+	sum_result_1[3] = mult_result[5] + mult_result[6];
+	sum_result_1[4] = mult_result[7] + mult_result[8];
+	sum_result_1[5] = mult_result[9] + mult_result[10];
+	sum_result_1[6] = mult_result[11] + mult_result[12];
+	sum_result_1[7] = mult_result[13] + mult_result[14];
+	sum_result_1[8] = mult_result[15] + mult_result[16];
+	sum_result_1[9] = mult_result[17] + mult_result[18];
+	sum_result_1[10] = mult_result[19] + mult_result[20];
+	sum_result_1[11] = mult_result[21] + mult_result[22];
+	sum_result_1[12] = mult_result[23] + mult_result[24];
+	sum_result_1[13] = mult_result[25] + mult_result[26];
+	sum_result_1[14] = mult_result[27] + mult_result[28];
+	sum_result_1[15] = mult_result[29] + mult_result[30];
+	sum_result_1[16] = mult_result[31] + mult_result[32];
+end
+ 
+always @(*)begin
+	sum_result_2[1] = sum_result_1[1] + sum_result_1[2];
+	sum_result_2[2] = sum_result_1[3] + sum_result_1[4];
+	sum_result_2[3] = sum_result_1[5] + sum_result_1[6];
+	sum_result_2[4] = sum_result_1[7] + sum_result_1[8];
+	sum_result_2[5] = sum_result_1[9] + sum_result_1[10];
+	sum_result_2[6] = sum_result_1[11] + sum_result_1[12];
+	sum_result_2[7] = sum_result_1[13] + sum_result_1[14];
+	sum_result_2[8] = sum_result_1[15] + sum_result_1[16];
+end
 
-assign Out_OFM = (out_valid == 1)? out : 0;
+always @(*)begin
+	sum_result_3[1] = sum_result_2[1] + sum_result_2[2];
+	sum_result_3[2] = sum_result_2[3] + sum_result_2[4];
+	sum_result_3[3] = sum_result_2[5] + sum_result_2[6];
+	sum_result_3[4] = sum_result_2[7] + sum_result_2[8];
+end
 
+always @(*)begin
+	sum_result_4[1] = sum_result_3[1] + sum_result_3[2];
+	sum_result_4[2] = sum_result_3[3] + sum_result_3[4];
+	
+	sum_result_5 = sum_result_4[1] + sum_result_4[2];
+	
+end
 
+//=====================================================================//
+//                           Output & Counter                          //
+//=====================================================================//
+
+always @(posedge clk or negedge rst_n )begin
+	if(!rst_n)begin 
+		done <= 0;
+	end
+	else begin 
+		if(in_valid) begin
+			done <= 1;
+		end
+		else begin
+			done <= 0 ;
+		end
+	end
+end
+
+always @(posedge clk or negedge rst_n)begin
+	if(!rst_n) begin
+		out_valid <= 0;
+	end
+	else begin 
+		if(done)begin
+			out_valid <= 1;
+		end
+		else begin 
+			out_valid <= 0;
+		end 
+	end
+end
+
+always @(posedge clk or negedge rst_n)begin
+	if(!rst_n)begin
+		out_result <= 'd0;
+	end
+	else begin
+		if(done)begin
+			out_result <= sum_result_5;
+		end
+		else begin
+			out_result <='d0;
+		end
+	end
+end
 
 endmodule
